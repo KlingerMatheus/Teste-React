@@ -1,0 +1,111 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+* {
+  list-style: none;
+  user-select: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  color: white;
+}
+
+.App-title {
+  font-size: 38px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.5);
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-block: 4px;
+  font-size: 24px;
+  padding-block: 5px;
+  border-radius: 6px;
+  transition: 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  cursor: pointer;
+}
+
+li:hover {
+  transform: scale(1.05);
+  background-color: rgb(0, 100, 100, 1);
+  box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.15);
+  z-index: 99;
+}
+
+li:active {
+  background-color: rgb(0, 250, 250, 1);
+}
+
+.error-alert {
+  background-color: rgb(150, 0, 0, 1);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.toIgnore {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 600px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bolder;
+  opacity: 0;
+  font-size: 64px;
+  color: white;
+  transition: all 0.4s;
+  animation-delay: 5s;
+  animation-name: slide-top-blurred;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-top-blurred {
+  0% {
+    transform: translateY(500px);
+    filter: blur(15px);
+  }
+
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
